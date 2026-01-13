@@ -1,0 +1,56 @@
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Output data directories
+result/
+result2_population_base/
+result3_area_base/
+pre/
+
+# Output CSV files (pipeline stages)
+trip2.csv
+trip3.csv
+trip4.csv
+final.csv
+random_od_pairs.csv
+random_points.csv
+population_product_combinations.csv
+area_product_combinations.csv
+
+# Output GeoJSON files
+random_points.geojson
+random_points_with_districts.geojson
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+Thumbs.db
+.DS_Store
+._*
+
+# Virtual environments (optional - uncomment if using)
+# venv/
+# env/
+# ENV/
+# .venv/

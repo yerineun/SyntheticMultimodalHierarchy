@@ -109,7 +109,7 @@ def simplify_trip(trip: str) -> str:
         
     Returns:
         Simplified trip route string with merged modes and reduced walking segments
-        Example: 'walking(5분) -> bus(15분) -> subway(20분) -> walking(2분)'
+        Example: 'walking(5분) -> bus(18분) -> subway(20분) -> walking(2분)'
         
     Note:
         The function uses regex to parse segments in the format 'mode(time)'
@@ -131,19 +131,32 @@ def simplify_trip(trip: str) -> str:
 
         # Handle walking: absorb intermediate, keep first and last
         if mode == "walking":
-            if i == 0 or i == len(segments) - 1:  # Keep first and last walking
+            if i == 0:  # First walking segment - keep it
                 # Save accumulated time for previous mode if exists
                 if current_mode:
                     processed_segments.append(
                         f"{current_mode}({convert_minutes_to_time(total_time)})"
                     )
+                    current_mode = None
+                    total_time = 0
                 # Add the walking segment
                 processed_segments.append(segment)
-                current_mode = None
-                total_time = 0
+            elif i == len(segments) - 1:  # Last walking segment - keep it
+                # Save accumulated time for previous mode if exists
+                if current_mode:
+                    processed_segments.append(
+                        f"{current_mode}({convert_minutes_to_time(total_time)})"
+                    )
+                    current_mode = None
+                    total_time = 0
+                # Add the walking segment
+                processed_segments.append(segment)
             else:
-                # Absorb walking into the previous mode (add to total time)
-                total_time += convert_time_to_minutes(time)
+                # Intermediate walking - absorb into previous mode if it exists
+                if current_mode:
+                    # Add walking time to the current mode's total time
+                    total_time += convert_time_to_minutes(time)
+                # If no previous mode, the walking segment is lost (shouldn't happen in practice)
             continue
 
         # Accumulate time for the same mode
@@ -159,7 +172,7 @@ def simplify_trip(trip: str) -> str:
             current_mode = mode
             total_time = convert_time_to_minutes(time)
 
-    # Append the last accumulated mode
+    # Append the last accumulated mode (if not already saved by last walking segment)
     if current_mode:
         processed_segments.append(
             f"{current_mode}({convert_minutes_to_time(total_time)})"

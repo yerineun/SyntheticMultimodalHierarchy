@@ -3,7 +3,7 @@
 **Repository title:** SMH (Synthetic Multimodal Hierarchy)  
 **Study title:** Identifying Public Transit Multimodal Hierarchy Using Artificially Generated Trip Chains
 
-SMH provides the Stage I implementation for generating and pre-processing synthetic multimodal itineraries that feed a broader framework for quantifying urban transit hierarchies.
+SMH provides the Phase 1 implementation for generating and pre-processing synthetic multimodal itineraries that feed a broader framework for quantifying urban transit hierarchies.
 
 ## Abstract
 
@@ -15,12 +15,12 @@ This study introduces a methodology to quantify macroscopic urban transit hierar
 
 The research employs a two-stage pipeline that converts raw spatial data into quantified modal hierarchy scores, implemented across five primary scripts.
 
-### Stage I: Synthetic Itinerary Generation
+### Phase 1: Synthetic Itinerary Generation
 - **Spatial-temporal sampling:** Construct origin–destination pairs.  
 - **Data retrieval:** Extract multimodal routes via a public routing API (Google Maps Directions API).  
 - **Repository scope:** This codebase delivers Phase 1 (data acquisition and pre-processing).
 
-### Stage II: Hierarchy Quantification
+### Phase 2: Hierarchy Quantification
 - **Temporal segmentation:** Bisect each trip into ascending and descending phases at the temporal midpoint.  
 - **Transfer matrix construction:** Capture directional transitions between modes in each phase.  
 - **Scoring:** Compute pairwise hierarchical differences and aggregate them into normalized scores in the \[0, 1\] range.

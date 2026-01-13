@@ -228,9 +228,9 @@ You can also modify `config.py` directly, but using environment variables is rec
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│ Stage 1: Points Generation (1_points_generation.ipynb)         │
+│ Stage 1: Points Generation (1_points_generation.ipynb)          │
 │                                                                 │
-│ Input:  City district GeoJSON (pre/Amsterdam.geojson)          │
+│ Input:  City district GeoJSON (pre/Amsterdam.geojson)           │
 │ Output: Random points, OD pairs                                 │
 │         - random_points.geojson                                 │
 │         - random_points.csv                                     │
@@ -361,16 +361,4 @@ If processing large numbers of OD pairs:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
 
-[Specify your license here]
-
-## Acknowledgments
-
-- Google Maps Platform for transit route data
-- GeoPandas and Shapely communities for geospatial tools
-- OpenStreetMap for network analysis capabilities
-
-## Contact
-
-[Add contact information or project maintainer details]

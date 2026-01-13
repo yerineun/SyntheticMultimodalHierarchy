@@ -1,6 +1,10 @@
 # SMH (Synthetic Multimodal Hierarchy)
 
-A Python-based transit route analysis system that processes city district data, generates origin-destination pairs, fetches transit routes via Google Maps API, and analyzes route transitions. The project creates a synthetic multimodal transportation hierarchy by analyzing transit patterns across city districts.
+Synthetic Multimodal Hierarchy (SMH) is a Python-based transit analysis framework that models and infers the structural hierarchy of urban public transportation systems. By processing geospatial district data and simulating "trip chains," the system identifies how different transit modes (walking, bus, subway, etc.) form functional hierarchies in a city.
+
+This repository implements the methodology developed for the study:
+
+“Identifying Public Transit Multimodal Hierarchy Using Artificially Generated Trip Chains”
 
 ## Overview
 

@@ -258,9 +258,9 @@ You can also modify `config.py` directly, but using environment variables is rec
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│ Stage 1: Points Generation (1_points_generation.ipynb)         │
+│ Stage 1: Points Generation (1_points_generation.ipynb)          │
 │                                                                 │
-│ Input:  City district GeoJSON (pre/Amsterdam.geojson)          │
+│ Input:  City district GeoJSON (pre/Amsterdam.geojson)           │
 │ Output: Random points, OD pairs                                 │
 │         - random_points.geojson                                 │
 │         - random_points.csv                                     │
